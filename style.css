@@ -140,12 +140,21 @@ body{
     width: 100%;
     margin-right: 80px;
     margin-bottom: 20px;
+    border: 3px solid #007ACC;
+    display: flex;
+    align-items: center;
 }
 .remaining-time p{
     margin: 15px 10px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;
 }
+#remainingTime{
+    font-size: 25px ;
+    margin-left: 10px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
 
 .top-score{
     margin: 20px 0;
