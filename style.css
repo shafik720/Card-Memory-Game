@@ -29,6 +29,25 @@ body{
     pointer-events: none;
 }
 
+/* .wrapper.finish .mainCardx{
+    display: none;
+} */
+.wrapper.finish .finish-message{
+    display: block;
+}
+.finish-message{
+    display: none;
+    text-align: center;
+    position: fixed;
+    z-index: 65;
+    background: rgba(0, 0, 0, 0.781);
+    padding: 50px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid orange;
+}
 
 .mainCardx{
     display: grid;
@@ -140,6 +159,7 @@ body{
     width: 100%;
     margin-right: 80px;
     margin-bottom: 20px;
+    margin-top: 15px;
     border: 3px solid #007ACC;
     display: flex;
     align-items: center;

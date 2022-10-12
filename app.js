@@ -51,19 +51,21 @@ startBtn.addEventListener('click',()=>{
             wrapper.classList.remove('active');
             clearInterval(x);            
             resetBtn.style.display = 'block';
-            let remainingTimeCounter = 5;
+            let remainingTimeCounter = 15;
             let remainingTimeAction = setInterval(()=>{
                 remainingTime.innerText =  remainingTimeCounter;
                 remainingTimeCounter--;
                 if(remainingTimeCounter<=-1){
                     clearInterval(remainingTimeAction);
                     wrapper.classList.add('active');
-                    resetBtnP.innerText= 'Start Again';
+                    wrapper.classList.add('finish');
+                    resetBtnP.innerText= 'Play Again';
                     lastScore = scoreNumber.innerText;
                     if(lastScore ==''){
                         lastScore = 0 ;
                     }
                     score.push(lastScore);
+                    document.getElementById('finish-score').innerText = lastScore;
                     localStorage.setItem('score', JSON.stringify(score));
                 }
             },1000)
