@@ -34,6 +34,7 @@ body{
     border: 2px solid grey;
     cursor: pointer;
     background: grey;
+    overflow: hidden;
 }
 .cardx img{
     width: 100%;
