@@ -43,10 +43,25 @@ startBtn.addEventListener('click',()=>{
     },1000)
 })
 
+let firstSelect, secondSelect;
+let selection = [];
 function showImg(any){
-    console.log(any.querySelector('img'));
+    // console.log(any.querySelector('img').src);
+    firstSelect = any.querySelector('img').src;
     any.querySelector('img').style.opacity = '1';
+    selection.push(firstSelect);  
+    if(selection.length==2){
+        if(selection[0]==selection[1]){
+            console.log('Matched');
+        }else{
+            console.log('Did not match');
+        }
+        selection.splice(0,2);
+    }
+    console.log(selection);
 }
+
+
 
 for(let i=0;i<=cardX.length; i++){    
     let div = document.createElement('div');
