@@ -57,9 +57,7 @@ function showImg(any){
         if(selection[0]==selection[1]){
             showPopUp('right');
         }else{            
-            showPopUp('wrong');
-            // document.getElementById(`${idSelection[0]}`).style.opacity = '0';
-            
+            showPopUp('wrong');            
             let  x =  () => {
                 document.querySelector(`#${idSelection[0]} img`).style.opacity = '0';
                 document.querySelector(`#${idSelection[1]} img`).style.opacity = '0';
