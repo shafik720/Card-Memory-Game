@@ -54,12 +54,16 @@ startBtn.addEventListener('click',()=>{
 function resetGame(){
     window.location.reload();
 }
+
+//----------------------------------- Working on  function when window is loaded
 window.addEventListener('load',()=>{
     setTimeout(()=>{
         wrapper.classList.add('active');
     },1000)
     
 })
+
+
 let firstSelect, secondSelect;
 let selection = [];
 let idSelection = [];
