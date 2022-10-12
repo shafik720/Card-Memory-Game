@@ -55,7 +55,10 @@ function resetGame(){
     window.location.reload();
 }
 window.addEventListener('load',()=>{
-    wrapper.classList.add('active');
+    setTimeout(()=>{
+        wrapper.classList.add('active');
+    },1000)
+    
 })
 let firstSelect, secondSelect;
 let selection = [];
