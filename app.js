@@ -33,7 +33,7 @@ startBtn = document.querySelector('.start-game');
 
 
 let lastScore = 0;
-
+let score = JSON.parse(localStorage.getItem('score') || '[]')
 startBtn.addEventListener('click',()=>{    
     wrapper.classList.add('active');
     startBtn.style.display = 'none';
@@ -59,12 +59,23 @@ startBtn.addEventListener('click',()=>{
                     wrapper.classList.add('active');
                     resetBtnP.innerText= 'Start Again';
                     lastScore = scoreNumber.innerText;
-                    console.log(lastScore);
+                    if(lastScore ==''){
+                        lastScore = 0 ;
+                    }
+                    score.push(lastScore);
+                    localStorage.setItem('score', JSON.stringify(score));
                 }
             },1000)
         }
     },1000)
 })
+
+// console.log(score);
+
+let highScore = score.sort(function any(a,b){
+return b-a;
+})
+console.log(highScore)
 //----------------------------------- Working on  reset btn
 function resetGame(){
     window.location.reload();
@@ -99,7 +110,6 @@ function showImg(any){
             let  x =  () => {
                 document.querySelector(`#${idSelection[0]} img`).style.opacity = '0';
                 document.querySelector(`#${idSelection[1]} img`).style.opacity = '0';
-                console.log(idSelection);
             }
             setTimeout(x,500);
         } 
