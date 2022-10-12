@@ -26,6 +26,7 @@ popMsg = document.querySelector('.pop-message'),
 popCounter = document.querySelector('.pop-counter'), 
 wrapper = document.querySelector('.wrapper'), 
 resetBtn = document.querySelector('.reset-btn'), 
+highscoreDiv = document.querySelector('.top-score div'), 
 resetBtnP = document.querySelector('.reset-btn p'), 
 scoreNumber = document.getElementById('scoreNumber'), 
 remainingTime = document.getElementById('remainingTime'), 
@@ -50,7 +51,7 @@ startBtn.addEventListener('click',()=>{
             wrapper.classList.remove('active');
             clearInterval(x);            
             resetBtn.style.display = 'block';
-            let remainingTimeCounter = 5;
+            let remainingTimeCounter = 15;
             let remainingTimeAction = setInterval(()=>{
                 remainingTime.innerText =  remainingTimeCounter;
                 remainingTimeCounter--;
@@ -73,10 +74,14 @@ startBtn.addEventListener('click',()=>{
 // console.log(score);
 
 let highScore = score.sort(function any(a,b){
-return b-a;
-})
-console.log(highScore)
-//----------------------------------- Working on  reset btn
+    return b-a;
+});
+console.log(highScore);
+for(let i=0;i<5;i++){
+    let p = `<p>${highScore[i]}</p>`;
+    highscoreDiv.insertAdjacentHTML('beforeend',p);
+}
+//----------------------------------- Working on reset btn
 function resetGame(){
     window.location.reload();
 }

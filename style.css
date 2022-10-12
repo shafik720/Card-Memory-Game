@@ -124,8 +124,7 @@ body{
 
 /* --------------- left side navigation ----------------- */
 .score{
-    background: white;
-    min-height: 200px;    
+    background: white;  
     border-radius: 5px;
     width: 100%;
     margin-right: 80px;
@@ -146,4 +145,32 @@ body{
     margin: 15px 10px;
     font-size: 16px;
     font-weight: 500;
+}
+
+.top-score{
+    margin: 20px 0;
+    background: white;  
+    border-radius: 5px;
+    width: 100%;
+    margin-right: 80px;
+}
+.top-score h5{
+    margin: 10px 15px;
+    font-size: 18px;
+    font-weight: 600;    
+}
+.top-score p{
+    margin: 10px 15px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+.top-score p:nth-child(1){
+    color: red;
+}
+.top-score p:nth-child(2){
+    color: red;
+}
+.top-score p:nth-child(3){
+    color: red;
 }
