@@ -25,6 +25,7 @@ const cardX = document.querySelectorAll('.cardx'),
 popMsg = document.querySelector('.pop-message'),
 popCounter = document.querySelector('.pop-counter'), 
 wrapper = document.querySelector('.wrapper'), 
+resetBtn = document.querySelector('.reset-btn'), 
 startBtn = document.querySelector('.start-game');
 
 
@@ -34,19 +35,22 @@ startBtn.addEventListener('click',()=>{
     //     card.querySelector('div img').style.opacity = 1;
     // })
     wrapper.classList.add('active');
+    startBtn.style.display = 'none';
+    popCounter.style.display = 'flex';
     let counter = 5;      
-    popCounter.style.opacity = 1;   
+    // popCounter.style.opacity = 1;   
     popCounter.innerText = counter;
     let x = setInterval(()=>{          
         counter--;
         popCounter.innerText = counter;
         if(counter==0){
-            popCounter.style.opacity = 0;
+            popCounter.style.display = 'none';
             // cardX.forEach(card=>{
             //     card.querySelector('div img').style.opacity = 0;
             // })
             wrapper.classList.remove('active');
-            clearInterval(x);
+            clearInterval(x);            
+            resetBtn.style.display = 'block';
         }
     },1000)
 })
