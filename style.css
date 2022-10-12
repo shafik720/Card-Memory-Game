@@ -17,8 +17,10 @@ body{
 .wrapper{
     background: white;
     margin-top: 40px;
-    padding: 20px 15px;
+    padding: 35px 0px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -38,5 +40,5 @@ body{
 }
 .cardx img{
     width: 100%;
-    opacity: 1;
+    opacity: 0;
 }
