@@ -30,10 +30,7 @@ startBtn = document.querySelector('.start-game');
 
 
 
-startBtn.addEventListener('click',()=>{
-    // cardX.forEach(card=>{
-    //     card.querySelector('div img').style.opacity = 1;
-    // })
+startBtn.addEventListener('click',()=>{    
     wrapper.classList.add('active');
     startBtn.style.display = 'none';
     popCounter.style.display = 'flex';
@@ -45,15 +42,18 @@ startBtn.addEventListener('click',()=>{
         popCounter.innerText = counter;
         if(counter==0){
             popCounter.style.display = 'none';
-            // cardX.forEach(card=>{
-            //     card.querySelector('div img').style.opacity = 0;
-            // })
+            
             wrapper.classList.remove('active');
             clearInterval(x);            
             resetBtn.style.display = 'block';
         }
     },1000)
 })
+
+//----------------------------------- Working on  reset btn
+function resetGame(){
+    window.location.reload();
+}
 
 let firstSelect, secondSelect;
 let selection = [];
