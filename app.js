@@ -51,7 +51,7 @@ startBtn.addEventListener('click',()=>{
             wrapper.classList.remove('active');
             clearInterval(x);            
             resetBtn.style.display = 'block';
-            let remainingTimeCounter = 15;
+            let remainingTimeCounter = 5;
             let remainingTimeAction = setInterval(()=>{
                 remainingTime.innerText =  remainingTimeCounter;
                 remainingTimeCounter--;
