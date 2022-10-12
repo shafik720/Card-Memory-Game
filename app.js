@@ -2,21 +2,17 @@
 function random(min, max){
     let x = Math.floor(Math.random() * (max-min+1)+min) ;
     return x;
-    }
-let result = random(1, 6);
-console.log(result);
-
+    }8
 let arr = [];
-
 for(let i=0; i<100;i++){
-    let x = random(1,6);
+    let x = random(1,8);
     if(arr.indexOf(x) == -1){
         arr.push(x);
     }    
 }
 let arr2 = [];
 for(let i=0; i<100;i++){
-    let x = random(1,6);
+    let x = random(1,8);
     if(arr2.indexOf(x) == -1){
         arr2.push(x);
     }    
@@ -34,8 +30,7 @@ function showImg(any){
     any.querySelector('img').style.opacity = '1';
 }
 
-for(let i=0;i<=cardX.length; i++){
-    
+for(let i=0;i<=cardX.length; i++){    
     let div = document.createElement('div');
     div.innerHTML = `<img src="assets/img/img (${arr3[i]}).jpg">`;
     cardX[i].appendChild(div);
