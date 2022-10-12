@@ -23,7 +23,7 @@ body{
     justify-content: center;
 }
 .wrapper.active .cardx img{
-    opacity: 1;
+    opacity: 1 !important;
 }
 .wrapper.active .cardx{
     pointer-events: none;
