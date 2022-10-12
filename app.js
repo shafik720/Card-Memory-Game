@@ -54,7 +54,9 @@ startBtn.addEventListener('click',()=>{
 function resetGame(){
     window.location.reload();
 }
-
+window.addEventListener('load',()=>{
+    wrapper.classList.add('active');
+})
 let firstSelect, secondSelect;
 let selection = [];
 let idSelection = [];
