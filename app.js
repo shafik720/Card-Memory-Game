@@ -23,15 +23,17 @@ let arr3 = [...arr2,...arr]
 //-------------------------------------- Working on DOM ------------------
 const cardX = document.querySelectorAll('.cardx'),
 popMsg = document.querySelector('.pop-message'),
-popCounter = document.querySelector('.pop-counter'),
+popCounter = document.querySelector('.pop-counter'), 
+wrapper = document.querySelector('.wrapper'), 
 startBtn = document.querySelector('.start-game');
 
 
 
 startBtn.addEventListener('click',()=>{
-    cardX.forEach(card=>{
-        card.querySelector('div img').style.opacity = 1;
-    })
+    // cardX.forEach(card=>{
+    //     card.querySelector('div img').style.opacity = 1;
+    // })
+    wrapper.classList.add('active');
     let counter = 5;      
     popCounter.style.opacity = 1;   
     popCounter.innerText = counter;
@@ -40,9 +42,10 @@ startBtn.addEventListener('click',()=>{
         popCounter.innerText = counter;
         if(counter==0){
             popCounter.style.opacity = 0;
-            cardX.forEach(card=>{
-                card.querySelector('div img').style.opacity = 0;
-            })
+            // cardX.forEach(card=>{
+            //     card.querySelector('div img').style.opacity = 0;
+            // })
+            wrapper.classList.remove('active');
             clearInterval(x);
         }
     },1000)

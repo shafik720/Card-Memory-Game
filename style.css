@@ -22,6 +22,12 @@ body{
     display: flex;
     justify-content: center;
 }
+.wrapper.active .cardx img{
+    opacity: 1;
+}
+.wrapper.active .cardx{
+    pointer-events: none;
+}
 
 
 .mainCardx{
@@ -37,6 +43,7 @@ body{
     cursor: pointer;
     background: grey;
     overflow: hidden;
+    pointer-events: auto;
 }
 .cardx img{
     width: 100%;
@@ -83,9 +90,18 @@ body{
 .pop-counter{
     font-size: 5em;
     position: fixed;
-    color: white;
+    color: orange;
     top: 50%;
-    left: 20%;
+    left: 50%;
     opacity: 0;
     transition: all 0.2s;
+    background: rgba(0, 0, 0, 0.37);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
 }
+
