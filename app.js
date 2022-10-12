@@ -18,12 +18,30 @@ for(let i=0; i<100;i++){
     }    
 }
 let arr3 = [...arr2,...arr]
-console.log(arr3);
-
-const cardX = document.querySelectorAll('.cardx')
-// img = cardX.querySelector('img');
 
 
+//-------------------------------------- Working on DOM
+const cardX = document.querySelectorAll('.cardx'),
+startBtn = document.querySelector('.start-game');
+
+
+
+startBtn.addEventListener('click',()=>{
+    cardX.forEach(card=>{
+        card.querySelector('div img').style.opacity = 1;
+    })
+
+    let counter = 0;
+    let x = setInterval(()=>{
+        counter++;
+        if(counter==3){
+            cardX.forEach(card=>{
+                card.querySelector('div img').style.opacity = 0;
+            })
+            clearInterval(x);
+        }
+    },1000)
+})
 
 function showImg(any){
     console.log(any.querySelector('img'));
@@ -33,7 +51,6 @@ function showImg(any){
 for(let i=0;i<=cardX.length; i++){    
     let div = document.createElement('div');
     div.innerHTML = `<img src="assets/img/img (${arr3[i]}).jpg">`;
-    cardX[i].appendChild(div);
-    
+    cardX[i].appendChild(div);    
 }
 

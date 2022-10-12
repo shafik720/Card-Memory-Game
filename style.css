@@ -42,3 +42,20 @@ body{
     width: 100%;
     opacity: 0;
 }
+
+.start-game{
+    border: 3px solid black;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background: orange;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    font-weight: 600;
+}
+.start-game:hover{
+    /* background: white; */
+}
+.start-game p{
+    margin-bottom: 0;
+}
