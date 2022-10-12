@@ -20,8 +20,9 @@ for(let i=0; i<100;i++){
 let arr3 = [...arr2,...arr]
 
 
-//-------------------------------------- Working on DOM
+//-------------------------------------- Working on DOM ------------------
 const cardX = document.querySelectorAll('.cardx'),
+popMsg = document.querySelector('.pop-message'),
 startBtn = document.querySelector('.start-game');
 
 
@@ -46,21 +47,39 @@ startBtn.addEventListener('click',()=>{
 let firstSelect, secondSelect;
 let selection = [];
 function showImg(any){
-    // console.log(any.querySelector('img').src);
     firstSelect = any.querySelector('img').src;
     any.querySelector('img').style.opacity = '1';
     selection.push(firstSelect);  
     if(selection.length==2){
         if(selection[0]==selection[1]){
-            console.log('Matched');
-        }else{
-            console.log('Did not match');
+            showPopUp('right')
+        }else{            
+            showPopUp('wrong');
         }
         selection.splice(0,2);
     }
     console.log(selection);
 }
 
+//----------------------------- Pop Up message function  ----------------
+const showPopUp = (result) =>{
+    let counter = 0;
+            let x = setInterval(()=>{
+                counter++;
+                popMsg.style.opacity = 1;
+                if(result == 'right'){
+                    popMsg.innerText = 'Matched !'    ;
+                    popMsg.style.color ='green';
+                }else{
+                    popMsg.innerText = 'Not Matched '    ;
+                    popMsg.style.color ='red';
+                }
+                if(counter==10){
+                    clearInterval(x);
+                    popMsg.style.opacity = 0;
+                }
+            },100)
+}
 
 
 for(let i=0;i<=cardX.length; i++){    
