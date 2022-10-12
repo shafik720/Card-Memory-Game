@@ -46,19 +46,33 @@ startBtn.addEventListener('click',()=>{
 
 let firstSelect, secondSelect;
 let selection = [];
+let idSelection = [];
 function showImg(any){
+    
     firstSelect = any.querySelector('img').src;
     any.querySelector('img').style.opacity = '1';
     selection.push(firstSelect);  
+    idSelection.push(any.id);
     if(selection.length==2){
         if(selection[0]==selection[1]){
-            showPopUp('right')
+            showPopUp('right');
         }else{            
             showPopUp('wrong');
-        }
-        selection.splice(0,2);
+            // document.getElementById(`${idSelection[0]}`).style.opacity = '0';
+            
+            let  x =  () => {
+                document.querySelector(`#${idSelection[0]} img`).style.opacity = '0';
+                document.querySelector(`#${idSelection[1]} img`).style.opacity = '0';
+                console.log(idSelection);
+            }
+            setTimeout(x,500);
+        } 
+        setTimeout(()=>{
+            selection.splice(0,2);      
+         idSelection.splice(0,2);
+        },550)       
+        
     }
-    console.log(selection);
 }
 
 //----------------------------- Pop Up message function  ----------------
