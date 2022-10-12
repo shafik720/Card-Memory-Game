@@ -26,10 +26,13 @@ popMsg = document.querySelector('.pop-message'),
 popCounter = document.querySelector('.pop-counter'), 
 wrapper = document.querySelector('.wrapper'), 
 resetBtn = document.querySelector('.reset-btn'), 
+resetBtnP = document.querySelector('.reset-btn p'), 
 scoreNumber = document.getElementById('scoreNumber'), 
+remainingTime = document.getElementById('remainingTime'), 
 startBtn = document.querySelector('.start-game');
 
 
+let lastScore = 0;
 
 startBtn.addEventListener('click',()=>{    
     wrapper.classList.add('active');
@@ -47,10 +50,21 @@ startBtn.addEventListener('click',()=>{
             wrapper.classList.remove('active');
             clearInterval(x);            
             resetBtn.style.display = 'block';
+            let remainingTimeCounter = 5;
+            let remainingTimeAction = setInterval(()=>{
+                remainingTime.innerText =  remainingTimeCounter;
+                remainingTimeCounter--;
+                if(remainingTimeCounter<=-1){
+                    clearInterval(remainingTimeAction);
+                    wrapper.classList.add('active');
+                    resetBtnP.innerText= 'Start Again';
+                    lastScore = scoreNumber.innerText;
+                    console.log(lastScore);
+                }
+            },1000)
         }
     },1000)
 })
-
 //----------------------------------- Working on  reset btn
 function resetGame(){
     window.location.reload();
