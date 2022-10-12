@@ -26,6 +26,7 @@ popMsg = document.querySelector('.pop-message'),
 popCounter = document.querySelector('.pop-counter'), 
 wrapper = document.querySelector('.wrapper'), 
 resetBtn = document.querySelector('.reset-btn'), 
+scoreNumber = document.getElementById('scoreNumber'), 
 startBtn = document.querySelector('.start-game');
 
 
@@ -63,12 +64,13 @@ window.addEventListener('load',()=>{
     
 })
 
-
+// -------------------------------  showing image function or main function
 let firstSelect, secondSelect;
 let selection = [];
 let idSelection = [];
-function showImg(any){
-    
+let x = 0;
+
+function showImg(any){    
     firstSelect = any.querySelector('img').src;
     any.querySelector('img').style.opacity = '1';
     selection.push(firstSelect);  
@@ -76,6 +78,8 @@ function showImg(any){
     if(selection.length==2){
         if(selection[0]==selection[1]){
             showPopUp('right');
+            x = x+5;
+            scoreNumber.innerText = x;
         }else{            
             showPopUp('wrong');            
             let  x =  () => {
