@@ -21,7 +21,7 @@ let arr3 = [...arr2,...arr]
 
 
 //-------------------------------------- Working on DOM ------------------
-const cardX = document.querySelectorAll('.cardx'),
+let cardX = document.querySelectorAll('.cardx'),
 popMsg = document.querySelector('.pop-message'),
 popCounter = document.querySelector('.pop-counter'), 
 wrapper = document.querySelector('.wrapper'), 
@@ -80,6 +80,9 @@ let highScore = score.sort(function any(a,b){
 });
 console.log(highScore);
 for(let i=0;i<5;i++){
+    if(highScore[i] == undefined){
+        highScore[i] = 0;
+    }
     let p = `<p>${highScore[i]}</p>`;
     highscoreDiv.insertAdjacentHTML('beforeend',p);
 }
