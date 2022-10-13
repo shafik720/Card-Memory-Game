@@ -5,9 +5,7 @@
 }
 
 body{
-    background: linear-gradient(45deg,#440F50, #B15B86);
-    background: -moz-linear-gradient(45deg,#440F50, #B15B86);
-    background: -webkit-linear-gradient(45deg,#440F50, #B15B86);
+    background: teal;
     height: 100%;
     box-sizing: border-box;
     margin: 0;
