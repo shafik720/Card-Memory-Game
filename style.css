@@ -15,7 +15,6 @@ body{
     height: 100vh;
 }
 .wrapper{
-    background: white;
     margin-top: 40px;
     padding: 35px 0px;
     border-radius: 5px;
@@ -35,6 +34,11 @@ body{
 .wrapper.finish .finish-message{
     display: block;
 }
+.mainCardx{
+    background: white;
+    padding: 30px;
+}
+
 .finish-message{
     display: none;
     text-align: center;
@@ -146,7 +150,7 @@ body{
     background: white;  
     border-radius: 5px;
     width: 100%;
-    margin-right: 80px;
+    /* margin-right: 80px; */
 }
 .score p{
     margin: 30px 15px;
@@ -157,7 +161,7 @@ body{
     background: white;   
     border-radius: 5px;
     width: 100%;
-    margin-right: 80px;
+    /* margin-right: 80px; */
     margin-bottom: 20px;
     margin-top: 15px;
     border: 3px solid #007ACC;
@@ -181,7 +185,7 @@ body{
     background: white;  
     border-radius: 5px;
     width: 100%;
-    margin-right: 80px;
+    /* margin-right: 80px; */
 }
 .top-score h5{
     margin: 10px 15px;
@@ -202,4 +206,31 @@ body{
 }
 .top-score p:nth-child(3){
     color: red;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width:580px){
+    .cardx{
+        width: 70px;
+        height: 70px;
+        border: 2px solid grey;
+        cursor: pointer;
+        background: grey;
+        overflow: hidden;
+        pointer-events: auto;
+        z-index: 55;
+    }
+    .wrapper{
+        margin-top: 20px;
+        padding: 35px 0px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
 }
