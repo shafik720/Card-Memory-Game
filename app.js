@@ -73,7 +73,7 @@ startBtn.addEventListener('click',()=>{
     },1000)
 })
 
-// console.log(score);
+// console.log(score);  
 
 let highScore = score.sort(function any(a,b){
     return b-a;
